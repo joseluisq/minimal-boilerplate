@@ -1,2 +1,3 @@
-var pkg = require('../../../package.json');
-console.trace(pkg);
+import pkg from '../../../package.json'
+
+console.trace(pkg)

@@ -1,6 +1,6 @@
 # minimal-boilerplate
 
-> Front-End boilerplate with npm run tasks built-in.
+> Minimal Front-End boilerplate with npm run tasks built-in.
 
 No more complex and large configuration task files, `minimal-boilerplate` has a very tiny configuration footprint via npm scripts.
 
@@ -10,10 +10,11 @@ No more complex and large configuration task files, `minimal-boilerplate` has a 
 
 - Task automation with [npm run](http://substack.net/task_automation_with_npm_run).
 - CommonJS Modules in the browser with [browserify](http://browserify.org/).
-- Watch browserify builds with [watchify](https://github.com/substack/watchify).
-- Live preview and development with [browser-sync](https://browsersync.io/)
-- Automatically compile and watch Sass files with [node-sass](https://github.com/sass/node-sass).
-- Javascript and CSS bundles for production with [clean-css](https://github.com/jakubpawlowicz/clean-css) and [UglifyJS 2](https://github.com/mishoo/UglifyJS2).
+- Watch Browserify builds with [watchify](https://github.com/substack/watchify).
+- ES6 with [Babel](http://babeljs.io/).
+- Live preview and development server with [browser-sync](https://browsersync.io/).
+- Automatically watch and compile Sass files with [node-sass](https://github.com/sass/node-sass).
+- Javascript and CSS bundles for production with [UglifyJS 2](https://github.com/mishoo/UglifyJS2) and [clean-css](https://github.com/jakubpawlowicz/clean-css).
 
 ## Installation
 Clone this repository and install dependencies.
