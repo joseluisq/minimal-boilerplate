@@ -12,7 +12,7 @@
     "server": "browser-sync start --server 'app' --server 'dist' --port 7001 --files 'app/{,*/}*.html' --files 'dist/bundle.css' --files 'dist/bundle.js' --files 'app/assets/images/{,*/}*.{gif,ico,jpg,jpeg,png,svg,webp}'",
     "dev": "npm run build:css && (npm run server & npm run watch)",
     "start": "npm run dev",
-    "postinstall": "mkdir dist"
+    "postinstall": "mkdir -p dist"
   },
   "keywords": [
     "boilerplate",
