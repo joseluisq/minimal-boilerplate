@@ -1,3 +1,11 @@
-import pkg from '../../../package.json'
+class Person {
+  say (str) {
+    console.log(str)
+  }
+}
 
-console.trace(pkg)
+const me = new Person()
+
+console.log(
+  me.say('Hello world!')
+)
