@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Minimal Front-End boilerplate with npm run tasks built-in.",
   "scripts": {
-    "build:js": "browserify -t [ babelify ] app/assets/scripts/main.js | uglifyjs --stats -vmc > dist/bundle.js",
+    "build:js": "browserify -t [ babelify ] app/assets/scripts/main.js | uglifyjs --stats -vmco dist/bundle.js",
     "build:css": "node-sass app/assets/style.scss dist/bundle.css && cleancss dist/bundle.css -do dist/bundle.css",
     "watch:js": "watchify -t [ babelify ] app/assets/scripts/main.js -o dist/bundle.js -dv",
     "watch:css": "node-sass app/assets/style.scss dist/bundle.css -w",
-    "build": "npm run build:js & npm run build:css",
+    "build": "npm run build:js && npm run build:css",
     "watch": "npm run watch:css & npm run watch:js",
-    "server": "browser-sync start --server 'app' --server 'dist' --port 7001 --files 'app/{,*/}*.html' --files 'dist/bundle.css' --files 'dist/bundle.js' --files 'app/assets/images/{,*/}*.{gif,ico,jpg,jpeg,png,svg,webp}'",
+    "server": "browser-sync start --server 'app' --server 'dist' --port 7001 --files 'app/*.html' --files 'dist/bundle.css' --files 'dist/bundle.js' --files 'app/assets/images/{,*/}*.{gif,ico,jpg,jpeg,png,svg,webp}'",
     "dev": "npm run build:css && (npm run server & npm run watch)",
     "start": "npm run dev",
     "postinstall": "mkdir -p dist"
@@ -38,6 +38,7 @@
     "browser-sync": "^2.18.8",
     "browserify": "^14.1.0",
     "clean-css-cli": "^4.0.8",
+    "jquery": "^3.1.1",
     "node-sass": "^4.5.0",
     "uglify-js": "^2.8.7",
     "watchify": "^3.9.0"
