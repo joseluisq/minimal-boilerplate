@@ -6,10 +6,10 @@
     "build:js": "browserify -t [ babelify ] app/assets/scripts/main.js | uglifyjs --stats -vmco dist/bundle.js",
     "build:css": "node-sass app/assets/style.scss dist/bundle.css && cleancss dist/bundle.css -do dist/bundle.css",
     "watch:js": "watchify -t [ babelify ] app/assets/scripts/main.js -o dist/bundle.js -dv",
-    "watch:css": "node-sass app/assets/style.scss dist/bundle.css -w",
+    "watch:css": "node-sass app/assets/style.scss dist/bundle.css -w --source-map dist/style.map",
     "build": "npm run build:js && npm run build:css",
     "watch": "npm run watch:css & npm run watch:js",
-    "server": "browser-sync start --server 'app' --server 'dist' --port 7001 --files 'app/*.html' --files 'dist/bundle.css' --files 'dist/bundle.js' --files 'app/assets/images/{,*/}*.{gif,ico,jpg,jpeg,png,svg,webp}'",
+    "server": "browser-sync start --host 0.0.0.0 --server 'app' --server 'dist' --port 7001 --files 'app/*.html' --files 'dist/bundle.css' --files 'dist/bundle.js' --files 'app/assets/images/{,*/}*.{gif,ico,jpg,jpeg,png,svg,webp}'",
     "dev": "npm run build:css && (npm run server & npm run watch)",
     "start": "npm run dev",
     "postinstall": "mkdir -p dist"
@@ -31,16 +31,24 @@
   "homepage": "https://github.com/joseluisq/minimal-boilerplate",
   "devDependencies": {
     "babel-cli": "^6.23.0",
-    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-stage-2": "^6.22.0",
     "babelify": "^7.3.0",
+    "bootstrap-sass": "^3.3.7",
     "browser-sync": "^2.18.8",
     "browserify": "^14.1.0",
     "clean-css-cli": "^4.0.8",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.1.1",
     "node-sass": "^4.5.0",
+    "slendr": "^1.1.2",
     "uglify-js": "^2.8.7",
     "watchify": "^3.9.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
   }
 }
