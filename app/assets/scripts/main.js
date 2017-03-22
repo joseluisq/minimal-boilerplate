@@ -1,11 +1,4 @@
-class Person {
-  say (str) {
-    console.log(str)
-  }
-}
+const $ = window.jQuery = require('jquery')
+require('bootstrap-sass')
 
-const me = new Person()
-
-console.log(
-  me.say('Hello world!')
-)
+$('body').append('<h2 class="text-center">My awesome app!</h2>')
